@@ -13,9 +13,10 @@ var LocalStrategy = require("passport-local"),
   port = process.env.PORT || 3000,
   app = express();
 
-mongoose.connect("mongodb+srv://rbbjr1992:xGjYSAnKwA=7bFrT@testcluster-rpv9l.mongodb.net/test?retryWrites=true", {
+mongoose.connect("mongodb+srv://rbbjr1992:ChHRbNKmCQYzgw9w@testcluster.rpv9l.mongodb.net/test?retryWrites=true&w=majority", {
     useCreateIndex: true,
-    useNewUrlParser: true
+    useNewUrlParser: true,
+    useUnifiedTopology: true
   }
 );
 
