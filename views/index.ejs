@@ -1,5 +1,7 @@
 <% include ./partials/header %>
 
+<% var revBlogs = blogs.reverse(); %>
+
 <% if(!user) { %>
    <div class="ui large header">Welcome To The Blog</div>
 <% } else { %>
@@ -7,25 +9,25 @@
 <% } %>
    <div class="ui top attached">
       <div class="ui divided items">
-         <% for(var i = 0; i < blogs.length; i++) { %>
+         <% for(var i = 0; i < revBlogs.length; i++) { %>
             <div class="item">
                <div class="image">
-                  <img src="<%= blogs[i].image %>">
+                  <img src="<%= revBlogs[i].image %>">
                </div>
                <div class="content">
-                  <a class="header" href="/<%= blogs[i]._id %>"><%= blogs[i].title %></a>
+                  <a class="header" href="/<%= revBlogs[i]._id %>"><%= revBlogs[i].title %></a>
                   <div class="meta">
-                     <span><%= blogs[i].created.toDateString() %></span>
+                     <span><%= revBlogs[i].created.toDateString() %></span>
                   </div>
                   <div class="description">
-                  <% if(typeof blogs[i].post == "undefined") { %>
+                  <% if(typeof revBlogs[i].post == "undefined") { %>
                      <p>no content</p>
                   <% } else { %>
-                     <p><%- blogs[i].post.substring(0, 99) %></p>
+                     <p><%- revBlogs[i].post.substring(0, 99) %></p>
                   <% } %>
                   </div>
                   <div class="extra">
-                     <a class="ui floated violet button" href="/<%= blogs[i]._id %>">Read More</a> 
+                     <a class="ui floated violet button" href="/<%= revBlogs[i]._id %>">Read More</a> 
                   </div>
                </div>
             </div>

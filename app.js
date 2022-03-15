@@ -13,7 +13,7 @@ var LocalStrategy = require("passport-local"),
   port = process.env.PORT || 3000,
   app = express();
 
-mongoose.connect("mongodb+srv://rbbjr1992:kc6km922@testcluster-rpv9l.mongodb.net/test?retryWrites=true", {
+mongoose.connect("mongodb+srv://rbbjr1992:xGjYSAnKwA=7bFrT@testcluster-rpv9l.mongodb.net/test?retryWrites=true", {
     useCreateIndex: true,
     useNewUrlParser: true
   }
